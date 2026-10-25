@@ -1,5 +1,5 @@
 To: J3                                                     J3/##-###
-From: Soren Rasmussen & HPC
+From: Soren Rasmussen & HPC
 Subject: Edits to replace the NUM_IMAGES example
 Date: 2026-October-25
 
@@ -10,7 +10,7 @@ Date: 2026-October-25
 This paper contains edits to 17.9.162 NUM_IMAGES 6 Example.
 
 The issues with this example are
-  1. Performs a naive / non-scalable push-broadcast through a coarray, instead
+  1. Performs a naive / non-scalable push-broadcast through a coarray, instead
      of calling CO_BROADCAST which would be the preferred method to do this.
      But an example rewritten to use CO_BROADCAST would no longer need
      NUM_IMAGES, so it wouldn't illustrate the procedure.
@@ -22,7 +22,7 @@ The issues with this example are
 
 [507:26-34] 17.9.162 NUM_IMAGES, paragraph 6, Example.
 
-Replace the current example paragraph:
+Replace the current example paragraph:
 
 "
 Example. The following code uses image 1 to read data and broadcast it to
@@ -37,15 +37,16 @@ Example. The following code uses image 1 to read data and broadcast it to
    SYNC ALL
 "
 
-with:
+with:
 
 "
 Example. The following statement prints the index of the invoking image and
          the number of images in the current team.
 
-  PRINT *, "This is image", THIS_IMAGE(), "of", NUM_IMAGES()
+  PRINT *, "This is image", THIS_IMAGE(), "of", NUM_IMAGES()
 "
 
-The replacement is the customary "hello world" of SPMD (single program,
-multiple data) programming models such as MPI and coarray Fortran: each image
+The replacement represents the customary "hello world" example often
+shown in tutorials of SPMD (single program, multiple data) programming
+models such as MPI and multi-image Fortran: each image
 reports its own image index and the number of images in the current team.
