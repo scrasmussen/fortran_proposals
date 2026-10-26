@@ -25,7 +25,7 @@ Replace the current example paragraph and code in the NOTE:
 Here is a simple example of its use. Image 1 reads data and broadcasts it to
 other images:
   REAL :: P[*]
-  …
+  ...
   SYNC ALL
   IF (THIS_IMAGE()==1) THEN
     READ (*,*) P
@@ -36,15 +36,16 @@ other images:
   SYNC ALL
 "
 
-{The (unrelated) first paragraph of the Note should be preserved, or possibly split into a separate Note.}
+The (unrelated) first paragraph of the Note should be preserved, or possibly
+split into a separate Note.
 
 with:
 
 "
 Here is a simple example of its use to synchronize a parallel halo exchange,
-a common algorithm in scientific computing. Each image copies boundary values from
-its two neighbors in a periodic one-dimensional decomposition. The first SYNC
-ALL ensures that the neighbors have defined P(1:N) before the values are
+a common algorithm in scientific computing. Each image copies boundary values
+from its two neighbors in a periodic one-dimensional decomposition. The first
+SYNC ALL ensures that the neighbors have defined P(1:N) before the values are
 copied; the second SYNC ALL ensures that all images have finished copying
 before any image redefines P(1:N).
 
