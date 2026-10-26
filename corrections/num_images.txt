@@ -7,7 +7,8 @@ Date: 2026-October-25
 1. Introduction
 ---------------
 
-This paper contains edits to 17.9.162 NUM_IMAGES 6 Example.
+This paper contains edits to 17.9.162 NUM_IMAGES, paragraph 6, Example.
+
 
 The issues with this example are
   1. Performs a naive / non-scalable push-broadcast through a coarray, instead
